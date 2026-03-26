@@ -9,7 +9,7 @@ A simple weather application that allows users to enter a city and get real-time
 - Clean and simple UI
 
 ## API Used
-OpenWeather API
+OpenWeather API (requires your own API key)
 
 ## Technologies
 - HTML
@@ -18,7 +18,5 @@ OpenWeather API
 
 ## How to Run
 1. Clone the repository
-2. Open index.html in your browser
-
-## Example
-Enter: Lagos → Get weather information
+2. Get your own OpenWeatherMap API key by signing up at [https://openweathermap.org/](https://openweathermap.org/)
+3. Create a `.env` file in the project root and add:
