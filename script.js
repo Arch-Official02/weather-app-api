@@ -2,7 +2,12 @@ async function getWeather() {
   const city = document.getElementById("city").value;
   const result = document.getElementById("result");
 
-  const apiKey = "597cc8da46d90ebad2f6960a03bf39ca"; // Replace with your OpenWeatherMap API key
+  const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // Keep key in .env
+
+  if (!apiKey) {
+    result.innerText = "API key not set. Check README for instructions.";
+    return;
+  }
 
   result.innerText = "Loading...";
 
@@ -19,9 +24,9 @@ async function getWeather() {
     }
 
     result.innerText = `
-      City: ${data.name}
-      Temp: ${data.main.temp}°C
-      Weather: ${data.weather[0].description}
+City: ${data.name}
+Temp: ${data.main.temp}°C
+Weather: ${data.weather[0].description}
     `;
   } catch (error) {
     result.innerText = "Error fetching data";
